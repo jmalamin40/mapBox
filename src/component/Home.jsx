@@ -33,7 +33,7 @@ function classNames(...classes) {
 export default function Home() {
   const [data, setMapData] = useState([]);
   useEffect(async()=>{
-    let datamap = await axios.get('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson');
+    let datamap = await axios.get('/api/hello');
     console.log(datamap.data.features, '-------------');
     setMapData(datamap.data.features);
   }, [])
