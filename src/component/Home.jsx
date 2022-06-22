@@ -33,6 +33,7 @@ function classNames(...classes) {
 export default function Home() {
   const [data, setMapData] = useState([]);
   useEffect(async()=>{
+    axios.defaults.baseURL = window.location.origin;
     let datamap = await axios.get('/api/hello.php');
     console.log(datamap.data.features, '-------------');
     setMapData(datamap.data.features);
