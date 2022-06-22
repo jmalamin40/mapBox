@@ -33,7 +33,7 @@ function classNames(...classes) {
 export default function Home() {
   const [data, setMapData] = useState([]);
   useEffect(async()=>{
-    let datamap = await axios.get('api/hello.php');
+    let datamap = await axios.get('/api/hello.php');
     console.log(datamap.data.features, '-------------');
     setMapData(datamap.data.features);
   }, [])
